@@ -1,13 +1,22 @@
 from fastapi import FastAPI
 from routes.user_routes import router as user_router
+<<<<<<< HEAD
 from routes.ai_response_routes import router as ai_response_router
+=======
+from routes.ai_response_routes import router as ai_router
+>>>>>>> 649cb05 (dasd)
 from db import engine
 import os
 from models import Base
 app = FastAPI()
 
 app.include_router(user_router)
+<<<<<<< HEAD
 app.include_router(ai_response_router)
+=======
+app.include_router(ai_router)
+
+>>>>>>> 649cb05 (dasd)
 # Create database tables if they don't exist
 Base.metadata.create_all(bind=engine)
 
